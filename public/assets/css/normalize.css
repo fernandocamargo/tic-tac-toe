@@ -1,0 +1,19 @@
+nav > *:first-child {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  caret-color: transparent;
+  display: inline-block;
+  -moz-appearance: textfield;
+}
+
+figure {
+  margin: 0;
+}

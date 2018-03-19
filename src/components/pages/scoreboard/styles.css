@@ -1,0 +1,76 @@
+.page.scoreboard {
+  transform: rotateX(90deg) translateZ(37.5vmin);
+}
+
+.page.scoreboard figure {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page.scoreboard img {
+  border-radius: 50%;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+  width: 10rem;
+}
+
+.page.scoreboard figcaption {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.page.scoreboard blockquote {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.page.scoreboard dl {
+  background-color: #fff;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  position: relative;
+  width: 4rem;
+}
+
+.page.scoreboard dl:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.page.scoreboard dl.draw {
+  color: #ccc;
+}
+
+.page.scoreboard dl.win {
+  color: #63C132;
+}
+
+.page.scoreboard dl.loss {
+  color: #fd151b;
+}
+
+.page.scoreboard dt {
+  bottom: calc(100% + 0.25rem);
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.page.scoreboard dd {
+  font-family: 'futura-pt-bold';
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.page.scoreboard nav {
+  margin-top: 1rem;
+}

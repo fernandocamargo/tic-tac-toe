@@ -1,0 +1,14 @@
+.page.board {
+  transform: rotateY(90deg) translateZ(37.5vmin);
+}
+
+.page.board .slots {
+  background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  display: grid;
+  grid-gap: 1rem;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  height: 45vmin;
+  margin-top: 2rem;
+  position: relative;
+  width: 45vmin;
+}

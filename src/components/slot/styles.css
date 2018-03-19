@@ -1,0 +1,152 @@
+:root{
+  --background-color: #ededed;
+  --foreground-color: #d5d5d5;
+  --frame: 0.1s;
+  --border: 0.75rem;
+}
+
+.column {
+  background-color: #ededed;
+  position: relative;
+  z-index: 1;
+}
+
+.column label,
+.column label span {
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  top: 0;
+  width: 100%;
+}
+
+.column label {
+  cursor: pointer;
+}
+
+.column label span:before,
+.column label span:after {
+  content: '';
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.column:nth-child(odd) label span:before,
+.column:nth-child(odd) label span:after {
+  background-color: #d5d5d5;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: center center;
+  width: 0;
+}
+
+.column:nth-child(odd) label span:before {
+  transition: height 0.2s linear 0.2s;
+}
+
+.column:nth-child(odd) label span:after {
+  transition: width 0.2s linear;
+}
+
+.column:nth-child(odd) label input:checked + span:before {
+  height: 80%;
+  width: 0.75rem;
+}
+
+.column:nth-child(odd) label input:checked + span:after {
+  height: 0.75rem;
+  width: 80%;
+}
+
+.column:nth-child(even) label input:checked + span:before,
+.column:nth-child(even) label input:checked + span:after {
+  border: var(--border) solid transparent;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: calc(80% - (var(--border) * 2));
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: center center;
+  top: 50%;
+  width: calc(80% - (var(--border) * 2));
+}
+
+.column:nth-child(even) label input:checked + span:before {
+  animation:
+    before-step-01 0s linear forwards,
+    before-step-02 var(--frame) linear forwards,
+    before-step-03 var(--frame) linear forwards var(--frame),
+    before-step-04 var(--frame) linear forwards calc(var(--frame) * 2),
+    before-step-05 var(--frame) linear forwards calc(var(--frame) * 3);
+  border-bottom-color: var(--foreground-color);
+  border-left-color: var(--foreground-color);
+  border-right-color: var(--foreground-color);
+  border-top-color: var(--foreground-color);
+}
+
+.column:nth-child(even) label input:checked + span:after {
+  animation:
+    after-step-01 0s linear forwards,
+    after-step-02 0s linear forwards var(--frame),
+    after-step-03 0s linear forwards calc(var(--frame) * 2),
+    after-step-04 0s linear forwards calc(var(--frame) * 3),
+    after-step-05 0s linear forwards calc(var(--frame) * 3);
+  border-bottom-color: var(--background-color);
+  border-left-color: var(--background-color);
+  border-right-color: var(--background-color);
+  border-top-color: var(--background-color);
+}
+
+@keyframes before-step-01 {
+  0% { border-top-color: transparent; }
+  100% { border-top-color: transparent; }
+}
+
+@keyframes before-step-02 {
+  0% { transform: translate(-50%, -50%) rotate(45deg) }
+  100% { transform: translate(-50%, -50%) rotate(135deg) }
+}
+
+@keyframes before-step-03 {
+  0% { transform: translate(-50%, -50%) rotate(135deg) }
+  100% { transform: translate(-50%, -50%) rotate(225deg) }
+}
+
+@keyframes before-step-04 {
+  0% { transform: translate(-50%, -50%) rotate(225deg) }
+  100% { transform: translate(-50%, -50%) rotate(315deg) }
+}
+
+@keyframes before-step-05 {
+  0% { transform: translate(-50%, -50%) rotate(315deg) }
+  100% { transform: translate(-50%, -50%) rotate(405deg) }
+}
+
+@keyframes after-step-01 {
+  100% { border-top-color: transparent; }
+}
+
+@keyframes after-step-02 {
+  100% { border-right-color: transparent; }
+}
+
+@keyframes after-step-03 {
+  100% { border-bottom-color: transparent; }
+}
+
+@keyframes after-step-04 {
+  100% { border-left-color: transparent; }
+}
+
+@keyframes after-step-05 {
+  100% {
+    border-left-color: transparent;
+    border-top-color: var(--foreground-color);
+  }
+}

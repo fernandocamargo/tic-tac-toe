@@ -1,0 +1,116 @@
+.page.home {
+  transform: translateZ(37.5vmin);
+}
+
+.page.home .field.cells {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.page.home .field.cells label {
+  bottom: calc(100% + 1rem);
+  color: #d5d5d5;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  text-shadow: -1px 1px 0 #ededed, 1px 3px 0 rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.page.home .field.cells label:before,
+.page.home .field.cells label:after {
+  background-color: #ccc;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 3rem;
+}
+
+.page.home .field.cells label:before {
+  right: calc(100% + 1rem);
+}
+
+.page.home .field.cells label:after {
+  left: calc(100% + 1rem);
+}
+
+.page.home .field.cells span,
+.page.home .field.cells strong,
+.page.home .field.cells input {
+  display: inline-block;
+  font-family: 'futura-pt-bold';
+  font-size: 3rem;
+  text-align: center;
+}
+
+.page.home .field.cells strong,
+.page.home .field.cells input {
+  background: #d5d5d5;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  width: 3rem;
+}
+
+.page.home .field.cells span {
+  color: #ccc;
+  margin: 0 1rem;
+}
+
+.page.home .field.cells input,
+.page.home .control.submit button {
+  border: none;
+  display: inline-block;
+  font-family: 'futura-pt-bold';
+  outline: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page.home .control.submit {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.page.home .control.submit button {
+  background: linear-gradient(45deg, #fe6B8b 30%, #ff8e53 90%);
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .30);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+}
+
+.page.home .control.submit button:before,
+.page.home .control.submit button:after {
+  content: attr(value);
+}
+
+.page.home .control.submit button:after {
+  display: block;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.page.home .control.submit button:not(:active):hover:after {
+  animation: button-hover 1.5s infinite;
+}
+
+.page.home .control.submit button:active {
+  animation: button-active 0.75s infinite alternate;
+}

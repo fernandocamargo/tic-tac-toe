@@ -1,0 +1,28 @@
+@keyframes button-hover {
+  from {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    opacity: 1;
+  }
+  to {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    opacity: 0;
+  }
+}
+
+@keyframes button-active {
+  from {
+    text-shadow: 0;
+  }
+  to {
+    text-shadow: 
+      1px 0px 1px #fe6B8b, 0px 1px 1px #eee, 
+      2px 1px 1px #fe6B8b, 1px 2px 1px #eee,
+      3px 2px 1px #fe6B8b, 2px 3px 1px #eee,
+      4px 3px 1px #fe6B8b, 3px 4px 1px #eee,
+      5px 4px 1px #fe6B8b, 4px 5px 1px #eee,
+      6px 5px 1px #fe6B8b, 5px 6px 1px #eee,
+      7px 6px 1px #fe6B8b;
+  }
+}

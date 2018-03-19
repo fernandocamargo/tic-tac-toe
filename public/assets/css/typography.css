@@ -1,0 +1,11 @@
+@font-face{
+  font-family: 'futura-pt-bold';
+  src: url('../font/futura-pt-bold/futura-pt-bold.eot');
+  src: url('../font/futura-pt-bold/futura-pt-bold.eot?#iefix') format('embedded-opentype'),
+    url('../font/futura-pt-bold/futura-pt-bold.woff') format('woff'),
+    url('../font/futura-pt-bold/futura-pt-bold.ttf') format('truetype'),
+    url('../font/futura-pt-bold/futura-pt-bold.svg#futura-pt-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

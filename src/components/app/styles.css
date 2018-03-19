@@ -1,0 +1,131 @@
+.game {
+  height: 75vmin;
+  perspective: 1000px;
+  position: relative;
+  width: 75vmin;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.75, -0.5, 0, 1.75);
+}
+
+.game.home .pages {
+  transform: translateZ(-37.5vmin);
+}
+
+.game.scoreboard .pages {
+  transform: translateZ(-37.5vmin) rotateX(-90deg);
+}
+
+.game.boards .pages {
+  transform: translateZ(-37.5vmin) rotateY(90deg);
+}
+
+.game.board .pages {
+  transform: translateZ(-37.5vmin) rotateY(-90deg);
+}
+
+.page {
+  align-items: center;
+  background-color: #ededed;
+  border: solid 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.page .title {
+  color: #fff;
+  font-family: 'futura-pt-bold';
+  font-size: 2rem;
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.page nav {
+  font-family: 'Source Code Pro';
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  margin-top: 2rem;
+}
+
+.page nav ul {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.page nav li {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.page nav li:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.page nav a {
+  color: #fe6B8b;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.page nav a:before,
+.page nav a:after {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  transition: opacity 0.25s linear, width 0.25s linear;
+  white-space: nowrap;
+  width: 0;
+}
+
+.page nav a:before {
+  background-color: #fe6B8b;
+  content: '';
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  top: calc(100% + 0.25rem);
+}
+
+.page nav a:after {
+  background: #fe6B8b;
+  content: attr(title);
+  color: #fff;
+  height: 100%;
+  left: 0;
+  padding: 0.5rem 0;
+  top: -0.5rem;
+}
+
+.page nav a:hover:before,
+.page nav a:active:after {
+  opacity: 1;
+  width: 100%;
+}
